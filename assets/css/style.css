@@ -13,7 +13,7 @@ body{
 }
 
 .quote{
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .img-author{
@@ -71,6 +71,7 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .loading div {
   box-sizing: border-box;
   display: block;
@@ -83,15 +84,19 @@ body{
   animation: ldg 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #ffe54c transparent transparent transparent;
 }
+
 .loading div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 .loading div:nth-child(2) {
   animation-delay: -0.3s;
 }
+
 .loading div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 @keyframes ldg {
   0% {
     transform: rotate(0deg);
