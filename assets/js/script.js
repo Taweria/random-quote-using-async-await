@@ -17,7 +17,7 @@ fetch(`https://thatsthespir.it/api`)
         resultDiv.innerHTML = `
             <p class="quote">"${data.quote}"</p>
             <p class="author">- ${data.author}</p>
-            <img src=${data.photo ? data.photo : "../../assets/storage/placeholder.jpg"} alt="photo" class="img-author">
+            <img src=${data.photo ? data.photo : "../storage/placeholder.jpg"} alt="photo" class="img-author">
         `;
 
         quoteDiv.appendChild(resultDiv);
