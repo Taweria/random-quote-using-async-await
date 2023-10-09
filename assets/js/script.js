@@ -1,4 +1,5 @@
-let quoteDiv = document.querySelector(".quote");
+let quoteDiv = document.querySelector(".quotes");
+let button = document.querySelector("button");
 // fetch
 fetch(`https://thatsthespir.it/api`)
     .then(response => response.json())
@@ -7,14 +8,23 @@ fetch(`https://thatsthespir.it/api`)
         const resultDiv = document.createElement("div");
         resultDiv.classList.add("result");
         resultDiv.innerHTML = `
-            <p class="quote">${data.quote}</p>
-            <p class="author">${data.author}</p>
+            <p class="quote">"${data.quote}"</p>
+            <p class="author">- ${data.author}</p>
             <img src=${data.photo} class="img-author">
-            <p>Total quotes:${data.total_quotes}</p>
         `;
         quoteDiv.appendChild(resultDiv);
         // Clear the input field
     })
     .catch(error => {
         console.error("Error fetching data:", error);
+        const resultDiv = document.createElement("div");
+        resultDiv.classList.add("result");
+        resultDiv.innerHTML = `
+            <p> Error fetching API </p>
+        `;
+        quoteDiv.appendChild(resultDiv);
     });
+
+button.addEventListener("click", () =>{
+    location.reload()
+})
