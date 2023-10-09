@@ -28,7 +28,7 @@ fetch(`https://thatsthespir.it/api`)
         const resultDiv = document.createElement("div");
         resultDiv.classList.add("result");
         resultDiv.innerHTML = `
-            <p> Error fetching API </p>
+            <p class="error"> Error fetching API </p>
         `;
         quoteDiv.appendChild(resultDiv);
     });
