@@ -17,8 +17,10 @@ fetch(`https://thatsthespir.it/api`)
         resultDiv.innerHTML = `
             <p class="quote">"${data.quote}"</p>
             <p class="author">- ${data.author}</p>
-            <img src=${data.photo} class="img-author">
+            <img src=${data.photo ? data.photo : "../../assets/storage/istockphoto-1300730526-612x612.jpg"} class="img-author">
         `;
+
+        
         quoteDiv.appendChild(resultDiv);
         // Clear the input field
     })
