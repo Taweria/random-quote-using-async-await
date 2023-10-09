@@ -2,9 +2,9 @@ let quoteDiv = document.querySelector(".quotes");
 let button = document.querySelector("button");
 let loader = document.querySelector(".loading");
 
-// hide the loader initially
 loader.style.display = "block";
 
+setTimeout(() => {
 // fetch
 fetch(`https://thatsthespir.it/api`)
     .then(response => response.json())
@@ -17,10 +17,9 @@ fetch(`https://thatsthespir.it/api`)
         resultDiv.innerHTML = `
             <p class="quote">"${data.quote}"</p>
             <p class="author">- ${data.author}</p>
-            <img src=${data.photo ? data.photo : "../../assets/storage/istockphoto-1300730526-612x612.jpg"} class="img-author">
+            <img src=${data.photo ? data.photo : "../../assets/storage/placeholder.jpg"} alt="photo" class="img-author">
         `;
 
-        
         quoteDiv.appendChild(resultDiv);
         // Clear the input field
     })
@@ -33,6 +32,8 @@ fetch(`https://thatsthespir.it/api`)
         `;
         quoteDiv.appendChild(resultDiv);
     });
+
+}, 1000);
 
 button.addEventListener("click", () =>{
     location.reload()
