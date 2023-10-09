@@ -1,9 +1,16 @@
 let quoteDiv = document.querySelector(".quotes");
 let button = document.querySelector("button");
+let loader = document.querySelector(".loading");
+
+// hide the loader initially
+loader.style.display = "block";
+
 // fetch
 fetch(`https://thatsthespir.it/api`)
     .then(response => response.json())
     .then(data => {
+        // hide the loader
+        loader.style.display = "none";
         // Create a new div for the result and display it
         const resultDiv = document.createElement("div");
         resultDiv.classList.add("result");
